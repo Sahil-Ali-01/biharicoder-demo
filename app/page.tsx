@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -64,4 +65,13 @@ export default function Home() {
       </div>
     </main>
   );
+}
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
+    </>
+  )
 }
